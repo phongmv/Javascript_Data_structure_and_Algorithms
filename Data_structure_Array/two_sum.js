@@ -12,8 +12,6 @@ function twoSum(arr, target) {
             return [map.get(remaining), i]
         }
     }
-
-    return  []
 }
 
 
