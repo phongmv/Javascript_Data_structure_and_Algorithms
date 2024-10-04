@@ -24,13 +24,21 @@ class HashTable {
     get(key){
         const address = this._hash(key)
         if(!this.data[address]) return undefined
-        return this.data[address]
+        const currentBucket = this.data[address]
+        for (const currentBucketElement of currentBucket) {
+            return currentBucketElement[1]
+        }
     }
 
 }
 
 const myHashTable = new HashTable(50);
-myHashTable.set('grapes', 10000)
-console.log(myHashTable.get('grapas'))
+
+myHashTable.set('grapes', 9999)
+console.log(myHashTable.get('grapes'))
+
+myHashTable.set('jin', 3001)
+console.log(myHashTable.get('jin'))
+
 
 
