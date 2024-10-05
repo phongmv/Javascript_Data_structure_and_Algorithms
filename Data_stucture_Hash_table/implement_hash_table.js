@@ -30,15 +30,38 @@ class HashTable {
         }
     }
 
+    keys(){
+        const keys = []
+            for(let i = 0; i < this.data.length; i++){
+                const bucket = this.data[i]
+                if(bucket){
+                    const [key, value] = this.data[i][0]
+                    keys.push(key)
+                }
+            }
+        return keys
+    }
+
+
+    values(){
+        const values = []
+        for (let i = 0 ; i < this.data.length; i++) {
+            const bucket = this.data[i]
+            if(bucket){
+                const [key, value] = this.data[i][0]
+                values.push(value)
+            }
+        }
+
+        return values
+    }
+
 }
 
 const myHashTable = new HashTable(50);
+myHashTable.set('Viet', 3001)
+console.log(myHashTable.get('Viet'))
 
-myHashTable.set('grapes', 9999)
-console.log(myHashTable.get('grapes'))
-
-myHashTable.set('jin', 3001)
-console.log(myHashTable.get('jin'))
 
 
 
